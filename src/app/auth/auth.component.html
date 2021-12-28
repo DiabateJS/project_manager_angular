@@ -1,0 +1,21 @@
+<div id="login-page" ng-controller="UserAuthCtrl">
+    <div class="container">
+        <form class="form-login" action="accueil.html">
+            <h2 class="form-login-heading">Authentification</h2>
+            <div class="text-center">{{message}}</div>
+            <div class="login-wrap">
+                <input type="text" class="form-control" [(ngModel)]="login" placeholder="Login" autofocus>
+                <br>
+                <input type="password" class="form-control" [(ngModel)]="password" placeholder="Password">
+                <label class="checkbox">
+                    <input type="checkbox" value="remember-me"> Se souvenir de moi
+                    <span class="pull-right">
+            <a data-toggle="modal" href="index.html#myModal"> Mot de passe oublié ?</a>
+            </span>
+                </label>
+                    <button class="btn btn-theme btn-block" href="index.html" type="button" (click)="auth()"><i class="fa fa-lock"></i> Valider</button>
+                    <hr>
+            </div>
+        </form>
+    </div>
+</div>
