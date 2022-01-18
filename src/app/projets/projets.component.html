@@ -5,21 +5,17 @@
 <br>
 <table class="table table-striped">
     <thead>
-        <th>Id</th>
         <th>Libelle</th>
         <th>Etat</th>
         <th>Debut</th>
         <th>Fin</th>
-        <th>Description</th>
     </thead>
     <tbody>
         <tr *ngFor="let proj of projets">
-            <td><a [routerLink]="['/projet/', proj.id]">{{proj.id}}</a></td>
-            <td>{{proj.libelle}}</td>
-            <td>{{proj.etat}}</td>
-            <td>{{proj.dateDebut}}</td>
-            <td>{{proj.dateFin}}</td>
-            <td>{{proj.description}}</td>
+            <td><a [routerLink]="['/projet/', proj.id]">{{proj.libelle}}</a></td>
+            <td><span [ngClass]="{'badge': true, 'bg-info': proj.etat == 'A_FAIRE','bg-success': proj.etat == 'TERMINE', 'bg-primary': proj.etat == 'EN_COURS'}">{{proj.etat}}</span></td>
+            <td>{{proj.dateDebut | date:'dd/MM/yyyy'}}</td>
+            <td>{{proj.dateFin | date:'dd/MM/yyyy'}}</td>
         </tr>
     </tbody>
 </table>

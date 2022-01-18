@@ -2,40 +2,32 @@
 <br>
 <div class="row">
     <div class="col-lg-4">
-        <h2>Informations projet</h2>
         <br>
-        <p>Id : {{projet.id}}</p>
-        <p>Libelle : {{projet.libelle}}</p>
-        <p>Etat : {{projet.etat}}</p>
-        <p>Date Debut : {{projet.dateDebut}}</p>
-        <p>Date Fin : {{projet.dateFin}}</p>
-        <p>Description : {{projet.description}}</p>
+        <h4>{{projet.libelle}}</h4>
+        <p>{{projet.description}}</p>
+        <p><span [ngClass]="{'badge': true, 'bg-info': projet.etat == 'A_FAIRE','bg-success': projet.etat == 'TERMINE', 'bg-primary': projet.etat == 'EN_COURS'}">{{projet.etat}}</span></p>
+        <p>Debut : {{projet.dateDebut | date:'dd/MM/yyyy'}}</p>
+        <p>Fin : {{projet.dateFin | date:'dd/MM/yyyy'}}</p>
         <br>
         <a routerLinkActive="active" routerLink="/projets">Liste des projets</a>
     </div>
     <div class="col-lg-8">
-        <h4>Tâches du projet</h4>
+        <h4>Tâches</h4>
         <br>
         <table class="table table-striped">
             <thead>
-                <th>id</th>
-                <th>libelle</th>
-                <th>estimation</th>
-                <th>dateDebut</th>
-                <th>dateFin</th>
-                <th>description</th>
-                <th>etat</th>
+                <th>Libelle</th>
+                <th>Etat</th>
+                <th>Debut</th>
+                <th>Fin</th>
                 <th>user</th>
             </thead>
             <tbody>
                 <tr *ngFor="let tache of projet.taches">
-                    <td>{{tache.id}}</td>
                     <td>{{tache.libelle}}</td>
-                    <td>{{tache.estimation}}</td>
-                    <td>{{tache.dateDebut}}</td>
-                    <td>{{tache.dateFin}}</td>
-                    <td>{{tache.description}}</td>
-                    <td>{{tache.etat}}</td>
+                    <td><span [ngClass]="{'badge': true, 'bg-info': tache.etat == 'A_FAIRE','bg-success': tache.etat == 'TERMINE', 'bg-primary': tache.etat == 'EN_COURS'}">{{tache.etat}}</span></td>
+                    <td>{{tache.dateDebut | date:'dd/MM/yyyy'}}</td>
+                    <td>{{tache.dateFin | date:'dd/MM/yyyy'}}</td>
                     <td>{{tache.user}}</td>
                 </tr>
             </tbody>
