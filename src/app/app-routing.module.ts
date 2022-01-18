@@ -1,17 +1,23 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import {AuthComponent} from './auth/auth.component';
-import {WelcomeComponent} from './welcome/welcome.component';
+import {ProjetsComponent} from './projets/projets.component';
+import {ProjetComponent} from "./projet/projet.component";
 
 const routes: Routes = [
   {
     path: '',
-    component: AuthComponent
+    component: ProjetsComponent
   },
   {
-    path: 'accueil',
-    component: WelcomeComponent
-  }
+    path: 'projets',
+    component: ProjetsComponent
+  },
+  {
+    path: 'projet/:id',
+    component: ProjetComponent
+  },
+  { path: '',   redirectTo: 'projets', pathMatch: 'full' },
+  { path: '**', component: ProjetsComponent }
 ];
 
 @NgModule({

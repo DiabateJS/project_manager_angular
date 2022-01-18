@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  urlBack: 'http://localhost:8888/authent-security/index.php?'
+  urlAuth: 'http://localhost:8888/authent-security/index.php?',
+  urlBack: 'http://localhost:8888/project_manager_back/index.php?'
 };
 
 /*

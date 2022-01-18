@@ -1,4 +1,5 @@
 export const environment = {
   production: true,
-  urlBack: 'http://djstechnologies.fr/authent-security/index.php?'
+  urlAuth: 'http://djstechnologies.fr/authent-security/index.php?',
+  urlBack: 'http://djstechnologies.fr/project_manager_back/index.php?'
 };

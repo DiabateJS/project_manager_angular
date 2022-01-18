@@ -14,7 +14,7 @@ export class UserAuthService {
   constructor(private httpClient: HttpClient) { }
 
   isAuth(user: User): Observable<AuthResponseData> {
-    const url = environment.urlBack + 'method=auth';
+    const url = environment.urlAuth + 'method=auth';
     return this.httpClient.post<AuthResponseData>(url, user, HTTP_OPTIONS);
   }
 }

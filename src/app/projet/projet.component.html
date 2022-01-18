@@ -1,0 +1,44 @@
+<br>
+<br>
+<div class="row">
+    <div class="col-lg-4">
+        <h2>Informations projet</h2>
+        <br>
+        <p>Id : {{projet.id}}</p>
+        <p>Libelle : {{projet.libelle}}</p>
+        <p>Etat : {{projet.etat}}</p>
+        <p>Date Debut : {{projet.dateDebut}}</p>
+        <p>Date Fin : {{projet.dateFin}}</p>
+        <p>Description : {{projet.description}}</p>
+        <br>
+        <a routerLinkActive="active" routerLink="/projets">Liste des projets</a>
+    </div>
+    <div class="col-lg-8">
+        <h4>Tâches du projet</h4>
+        <br>
+        <table class="table table-striped">
+            <thead>
+                <th>id</th>
+                <th>libelle</th>
+                <th>estimation</th>
+                <th>dateDebut</th>
+                <th>dateFin</th>
+                <th>description</th>
+                <th>etat</th>
+                <th>user</th>
+            </thead>
+            <tbody>
+                <tr *ngFor="let tache of projet.taches">
+                    <td>{{tache.id}}</td>
+                    <td>{{tache.libelle}}</td>
+                    <td>{{tache.estimation}}</td>
+                    <td>{{tache.dateDebut}}</td>
+                    <td>{{tache.dateFin}}</td>
+                    <td>{{tache.description}}</td>
+                    <td>{{tache.etat}}</td>
+                    <td>{{tache.user}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
